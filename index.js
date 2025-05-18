@@ -18,6 +18,10 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+app.get("/api/hello", (req, res) => {
+  res.send("Hello World");
+});
+
 // your first API endpoint...
 app.get("/api/:date?", getDate);
 
