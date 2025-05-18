@@ -26,7 +26,7 @@ function getDate(req, res) {
   let dateObj;
   if (!date) {
     dateObj = new Date();
-  } else if (date.split("").every((el) => "0123456789".includes(el))) {
+  } else if (!isNaN(date) && Number.isInteger(Number(date))) {
     dateObj = new Date(Number(date));
   } else {
     dateObj = new Date(date);
